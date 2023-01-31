@@ -52,16 +52,24 @@ class MainActivity : ComponentActivity() {
 
 data class TaskItem(
     var taskTitle: String,
+    var taskText: String,
     var taskId: Int
 )
 
-var testTaskList: MutableList<TaskItem> = mutableListOf()
+var testTaskList: MutableList<TaskItem> = mutableStateListOf()
+
+const val taskTitleMinLength = 3
+const val taskTitleMaxLength = 50
+const val taskTextMaxLength = 120
+
+const val dummyTitle = "Lorem ipsum dolor sit amet, consectetuer adipiscin"
+const val dummyText = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis nat"
 
 fun removeItemAndRemakeListWithNewItemIds(task: TaskItem): MutableList<TaskItem> {
     var newList: MutableList<TaskItem> = mutableListOf()
     testTaskList.forEach {
         if (task != it) {
-            var newTask = TaskItem(it.taskTitle, newList.size)
+            var newTask = TaskItem(it.taskTitle, it.taskText, newList.size)
             newList.add(newTask)
             println("New Task: $newTask")
         }

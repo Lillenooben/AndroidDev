@@ -19,7 +19,7 @@ fun MainScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Red)
+            .background(Color.LightGray)
             .padding(8.dp)
     ){
 

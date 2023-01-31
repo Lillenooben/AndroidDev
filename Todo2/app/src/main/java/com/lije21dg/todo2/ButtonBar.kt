@@ -17,13 +17,11 @@ fun ButtonBar(navController: NavHostController){
         horizontalArrangement = Arrangement.SpaceAround,
         modifier = Modifier
             .fillMaxWidth()
-            .background(Color.Yellow)
+            .background(Color.Gray)
     ){
 
         Button(onClick = {
-            testTaskList.add(TaskItem("Test1", testTaskList.size))
-            println("Button1 run")
-            println(testTaskList)
+            testTaskList.add(TaskItem(dummyTitle, dummyText, testTaskList.size))
         }) {
             Text("Add Dummy")
         }
