@@ -26,7 +26,8 @@ fun MainScreen() {
         NavHost(
             navController,
             "taskScreen",
-            modifier = Modifier.weight(1f)){
+            modifier = Modifier.weight(1f)
+        ){
             composable("taskScreen"){
                 TaskScreen(navController)
             }
